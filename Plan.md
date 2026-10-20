@@ -15,3 +15,26 @@ Want the simplest solution that I can get something working sooner but nice enou
 please plan something and start creating tasks
 
 Ask me when you brainstorm here
+
+## Confirmed delivery direction
+
+Build a responsive web app that works on both iPhone and Android through a URL.
+Support optional home-screen installation as a progressive web app (PWA).
+No Apple App Store or Google Play submission is needed.
+Core lists and daily planning should work offline after the first successful load.
+Publishing or deployment still requires explicit approval.
+
+## Implementation cards
+
+- #7: App foundation and local storage.
+- #8: Quick capture for chores, projects, hobbies, and recommendations.
+- #9: Happiness questionnaire and balanced daily suggestions.
+- #10: Phone installation and verification of the daily flow.
+
+For cards #7 and #10, both iPhone and Android are required targets. This supersedes
+the earlier question in those cards about choosing one phone platform. Verify
+browser use and optional home-screen installation on both platforms.
+
+Local-only storage with export/import is the proposed first version. Cross-device
+syncing and online recommendation discovery remain open questions. Using the same
+website on two devices does not automatically synchronize locally stored data.
