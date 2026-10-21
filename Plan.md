@@ -15,3 +15,38 @@ Want the simplest solution that I can get something working sooner but nice enou
 please plan something and start creating tasks
 
 Ask me when you brainstorm here
+
+## Shared implementation foundation — card #11
+
+Card **#11: Build the app foundation with React, TypeScript, and ready-made
+components** replaces accidentally closed card **#7**. Cards **#8, #9, and #10**
+depend on #11; every reference in those cards to foundation card #7 means #11.
+
+- Use React + TypeScript + Vite, initialized from the official Vite React/TS
+  template. Use Mantine components and Mantine forms for standard controls.
+- Use Dexie over IndexedDB for local persistence, with explicit database versions
+  and migrations. Keep UI (`src/ui`), persistence (`src/data`), and validation/domain
+  logic (`src/domain`) separate. Do not add a state framework, backend, accounts,
+  paid services, or cloud sync.
+- The responsive shell has Today, Life Upkeep, Fun, and Preferences. The foundation
+  supports collecting and completing items; richer questionnaires, recommendations,
+  and balanced daily planning remain follow-up work.
+- Use `vite-plugin-pwa` for the manifest, app icons, offline app shell, and
+  user-controlled service-worker updates. The app is accessed through a URL with
+  optional home-screen installation, with no app store submission. **#10 owns
+  physical iPhone/Android installation and standalone/offline verification.**
+- Store items and preferences in the `whimsy` database (schema version 1). JSON
+  backups use the independent `whimsy-backup` version 1 format. Validate before
+  presenting restoration, require confirmation before replacing, and replace all
+  data in one transaction. Unknown backup versions must be rejected safely.
+- Inspection for #11 found only this plan: no existing application, persistence
+  schema, or user-data files to migrate. Preserve these original product notes.
+  Future changes must preserve existing IndexedDB records and supported backups.
+- Use current compatible stable free/open-source dependencies and keep
+  `package-lock.json` in the eventual approved commit. Node 24 LTS is the recommended
+  development runtime; `.nvmrc` and `package.json` specify compatibility.
+- Use Vitest, React Testing Library, and fake IndexedDB for behavior tests,
+  including reopening storage, invalid backups, cancellation, confirmed
+  replacement, and transactional rollback. Run typecheck, tests, lint, and build.
+- Ask before deployment, pushing, or publishing. The #11 implementation stays
+  unstaged and uncommitted until explicitly approved.
